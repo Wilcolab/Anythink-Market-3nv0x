@@ -4,6 +4,7 @@ import agent from "../agent";
 import { connect } from "react-redux";
 import { ITEM_FAVORITED, ITEM_UNFAVORITED } from "../constants/actionTypes";
 import placeholder from "../imgs/placeholder.png";
+
 const mapDispatchToProps = (dispatch) => ({
   favorite: (slug) =>
     dispatch({
@@ -37,7 +38,7 @@ const ItemPreview = (props) => {
     >
       <img
         alt="item"
-        src={item.image} or placeholder
+        src={item.image || placeholder} 
         className="card-img-top item-img"
         style={{ borderRadius: "20px" }}
       />
@@ -49,7 +50,7 @@ const ItemPreview = (props) => {
         <div className="d-flex flex-row align-items-center pt-2 item-footer">
           <Link to={`/@${item.seller.username}`} className="flex-grow-1">
             <img
-              src={item.seller.image} or placeholder
+              src={item.seller.image} 
 
               alt={item.seller.username}
               className="user-pic rounded-circle pr-1"
