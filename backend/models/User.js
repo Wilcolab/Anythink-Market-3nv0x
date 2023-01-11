@@ -3,7 +3,7 @@ var uniqueValidator = require("mongoose-unique-validator");
 var crypto = require("crypto");
 var jwt = require("jsonwebtoken");
 var secret = require("../config").secret;
-
+import placeholder from "../assets/images/placeholder.png";
 var UserSchema = new mongoose.Schema(
   {
     username: {
@@ -23,7 +23,7 @@ var UserSchema = new mongoose.Schema(
       index: true
     },
     bio: String,
-    image: String,
+    image: String || placeholder,
     role: {
       type: String,
       enum: ["user", "admin"],
